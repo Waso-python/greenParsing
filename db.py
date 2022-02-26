@@ -10,9 +10,9 @@ def create_connection():
         connection = psycopg2.connect(
             database='NEW_KS',
             user='postgres',
-            password='23edc$RF',
-            host='ksgulk.keenetic.pro',
-            port='9276'
+            password='',
+            host='',
+            port=''
         )
         print("Connection to PostgreSQL DB successful")
     except OperationalError as e:
