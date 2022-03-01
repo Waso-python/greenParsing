@@ -1,3 +1,5 @@
+#!/home/waso/greenParsing/venv/bin/python
+
 import psycopg2
 from psycopg2 import OperationalError
 from main import return_list
