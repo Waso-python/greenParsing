@@ -2,6 +2,8 @@ import psycopg2
 from psycopg2 import OperationalError
 from main import return_list
 from auth import pages
+from logopass import PASSWORD_DB, HOST_DB, PORT_DB
+from datetime import datetime
 
 
 def create_connection():
@@ -10,9 +12,9 @@ def create_connection():
         connection = psycopg2.connect(
             database='NEW_KS',
             user='postgres',
-            password='',
-            host='',
-            port=''
+            password=PASSWORD_DB,
+            host=HOST_DB,
+            port=PORT_DB
         )
         print("Connection to PostgreSQL DB successful")
     except OperationalError as e:
@@ -46,6 +48,10 @@ create_order_list_table = """
 
 con = create_connection()
 execute_query(con, create_order_list_table)
+
+now = datetime.now()
+insert_log = "INSERT INTO logs_table(descr) VALUES ('ADD ORDER FROM GREENSPARK');"
+execute_query(con, insert_log)
 
 insert_orders = """INSERT INTO tel_order (order_num, order_date, detail_name, quantity, price, links, order_status ) VALUES ('%s','%s','%s',%s,%s,'%s','%s')"""
 for count, value in enumerate(return_list(pages)):

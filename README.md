@@ -4,3 +4,12 @@
 
 Добавить:
 парсинг каталога товаров с ценами и записывать новые записи с изменением цены и временными метками
+
+
+#FOR MAC
+if you want to use the latest installed version of Postgres:
+
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH" 
+and then:
+
+pip install psycopg2
