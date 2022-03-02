@@ -13,3 +13,20 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 and then:
 
 pip install psycopg2
+
+Python 3
+
+sudo apt install libpq-dev python3-dev
+Additional
+
+If none of the above solve your issue, try
+
+sudo apt install build-essential
+or
+
+sudo apt install postgresql-server-dev-all
+With pip
+
+Install the psycopg2-binary PyPI package instead, it has Python wheels for Linux and Mac OS.
+
+pip install psycopg2-binary
